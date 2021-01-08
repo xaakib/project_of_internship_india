@@ -104,6 +104,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+                child: Text("You can also change your location from filters"))
           ],
         ),
       ),
