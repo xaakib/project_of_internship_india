@@ -11,37 +11,36 @@ class Profile extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Container(
-                  height: 200,
+              ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  height: 400,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.red,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.zero,
-                      topRight: Radius.zero,
-                      bottomLeft: Radius.circular(150),
-                      bottomRight: Radius.circular(150),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 150,
-                        child: Image.network(
-                          "https://images.unsplash.com/photo-1610256662599-49ff2e9570ea?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                          height: 150,
-                          width: 150,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ],
-                  )),
+                  color: Colors.red,
+                ),
+              )
             ],
           )
         ],
       ),
     );
+  }
+}
+
+class MyClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height - 50);
+    path.quadraticBezierTo(
+        size.width / 2, size.height, size.width, size.height - 50);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
