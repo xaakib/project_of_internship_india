@@ -5,7 +5,17 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blue,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: IconButton(
+                icon: Icon(Icons.chat_bubble_outline),
+                onPressed: () {},
+              ),
+            ),
+          ],
+          elevation: 0,
         ),
         body: Column(
           children: [
@@ -16,20 +26,36 @@ class Profile extends StatelessWidget {
                   child: Container(
                     height: 250,
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.red,
+                    color: Colors.blue,
                   ),
                 ),
-                Container(
-                  width: 100.0,
-                  height: 150.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    color: Colors.redAccent,
-                  ),
-                  child: Image.network(
-                    "https://images.unsplash.com/photo-1610262327400-f5820ca632bb?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-                    height: 150.0,
-                    width: 100.0,
+                Center(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 80.0,
+                        backgroundImage: NetworkImage(
+                            'https://images.unsplash.com/photo-1610212570340-dce3cf34b288?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0N3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+                        backgroundColor: Colors.transparent,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "ARBAAZ KADWELKAR",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "01/02/2000",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
