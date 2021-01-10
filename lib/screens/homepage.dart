@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:project_of_internship_india/screens/mainHome.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -50,19 +51,27 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Center(
-                child: Text(
-                  "ACCEPT",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainHome()),
+                );
+              },
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Center(
+                  child: Text(
+                    "ACCEPT",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                    ),
                   ),
                 ),
               ),
