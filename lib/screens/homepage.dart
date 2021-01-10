@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:project_of_internship_india/screens/mainHome.dart';
 
@@ -15,7 +13,7 @@ class HomePage extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                "      helping you find\nHealthcare you deserve",
+                "      Helping you find\nHealthcare you deserve",
                 style: TextStyle(
                     fontSize: 30,
                     color: Colors.blue,
